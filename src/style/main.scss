@@ -1,0 +1,30 @@
+.wrapper {
+  max-width: 55em;
+  background: #f9f9f3;
+  border: 2px solid green;
+  border-radius: 1em;
+  margin: 1em auto;
+}
+.calculate {
+  // .calculate__container
+  &__container {
+    padding: 0 0 0 2.6em;
+  }
+  // .calculate__header
+  &__header {
+    padding-top: 2em;
+  }
+
+  // .calculate__body
+
+  &__body {
+  }
+
+  // .calculate__footer
+
+  &__footer {
+    background: #ffffff;
+    text-align: right;
+    padding: 1.4em 6.25em 1.56em 0;
+  }
+}

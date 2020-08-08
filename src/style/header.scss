@@ -1,0 +1,37 @@
+.header {
+  // .header__close
+
+  &__close {
+    left: 90%;
+    position: relative;
+    cursor: pointer;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    border: 1px solid #00a200;
+    &:before,
+    &:after {
+      position: absolute;
+      left: 50%;
+      top: 20%;
+      content: " ";
+      height: 1.5em;
+      width: 0.0625em;
+      background: #00a200;
+    }
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  // .header__title
+
+  &__title {
+    text-align: left;
+    font-size: 1em;
+    margin: 1em 0 3.875em 0;
+  }
+}
