@@ -1,0 +1,21 @@
+.footer {
+  &__out {
+    display: block;
+    text-align: center;
+    color: #ff7f00;
+    font-size: 1em;
+    font-weight: 600;
+    padding: 2em 0;
+  }
+  &__text {
+    width: 12em;
+    display: inline-block;
+    font-size: 1.2em;
+    margin-right: 0.5em;
+  }
+  &__res {
+    color: #05a405;
+    font-size: 3.5em;
+    margin-right: 1.4em;
+  }
+}

@@ -1,10 +1,18 @@
+// MAIN STYLE==============================
 .wrapper {
-  max-width: 55em;
+  width: 55em;
+  height: 42em;
   background: #f9f9f3;
   border: 2px solid green;
   border-radius: 1em;
   margin: 1em auto;
+  overflow: hidden;
+  cursor: default;
+  & label {
+    cursor: pointer;
+  }
 }
+// MAIN BLOCK===============================
 .calculate {
   // .calculate__container
   &__container {
@@ -23,8 +31,73 @@
   // .calculate__footer
 
   &__footer {
+    height: 5.9em;
     background: #ffffff;
     text-align: right;
-    padding: 1.4em 6.25em 1.56em 0;
+  }
+}
+// MAIN INPUT!!!!!!!!!!!!!!=================
+.input {
+  display: none;
+  &:checked + &__text::after {
+    opacity: 1;
+  }
+  &__text {
+    font-weight: 500;
+    position: relative;
+    &:before {
+      content: "";
+      vertical-align: middle;
+      display: inline-block;
+      width: 1.9em;
+      height: 1.9em;
+      margin-right: 1em;
+      border: 2px solid #bcbcb7;
+      border-radius: 50%;
+    }
+    &:after {
+      content: "";
+      display: block;
+      width: 1.2em;
+      height: 1.2em;
+      border-radius: 50%;
+      background: #00a200;
+      position: absolute;
+      top: 0.7em;
+      left: 0;
+      transform: translate(30%, -45%);
+      opacity: 0;
+      transition: 0.3s;
+    }
+  }
+  // .input__more
+
+  &__more {
+  }
+}
+// BODY==================================
+.body {
+  // .body__content
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+  }
+  // .body__col
+  &__col {
+  }
+  // .body__input
+  &__input {
+    margin-right: 1em;
+  }
+  // .body__out
+  &__out {
+    flex: 0 0 100%;
+    margin: 0 0 0.75em 2.7em;
+    height: 2em;
+    & p {
+      color: #ff7f00;
+      font-size: 1.1em;
+    }
   }
 }

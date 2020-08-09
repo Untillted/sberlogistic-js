@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import "@/js/popup.js";
+import "@/js/variables.js";
 import Calculate from "@/components/Calculate.vue";
 export default {
   name: "App",

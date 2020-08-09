@@ -1,29 +1,6 @@
-.body {
-  // .body__col
-  &__content {
-    display: flex;
-    flex-wrap: wrap;
-    text-align: left;
-  }
-
-  &__col {
-  }
-
-  // .body__input
-
-  &__input {
-    margin-right: 1em;
-  }
-  // .body__laberl
-  &__label {
-    font-size: 1em;
-  }
-  // .body__out
-  &__out {
-  }
-}
+// LEFT BODY-CONTENT===============
 .left {
-  flex: 0 0 60%;
+  flex: 0 0 70%;
   // .left__inputs
 
   &__inputs {
@@ -33,6 +10,7 @@
     }
   }
 }
+
 .inputs {
   // .inputs__title
 
@@ -40,40 +18,61 @@
     margin-bottom: 1em;
     font-weight: 600;
   }
+  // .inputs__body
   &__body {
     display: flex;
     flex-wrap: wrap;
-
     & div {
       flex: 0 0 50%;
+      vertical-align: middle;
     }
   }
 }
+// INPUT-PICE============
 .input-pice {
+  transition: 0.2s;
+  opacity: 0;
+  margin-left: 50%;
+  transform: translateX(10%);
   & input {
+    cursor: default;
+    text-align: center;
     margin-left: 1.8em;
-    height: 2.8em;
-    width: 2.8em;
+    height: 1.5em;
+    width: 1.5em;
     border: 1px solid #bcbcb7;
     border-radius: 0.3em;
+    color: #00a200;
+    font-size: 1.5em;
   }
   & span {
     margin-left: 0.5em;
   }
+  //ANIMATION-INPUT!!!!!
+  &_active {
+    transition: 0.2s;
+    opacity: 1;
+    transform: translateX(0);
+    & input {
+      cursor: text;
+    }
+  }
 }
+// INPUT-SUM==============
 .input-sum {
   & input {
-    margin: 0.1em 0 0 1.3em;
+    color: #00a200;
+    margin: 0.1em 0 0 1.8em;
     text-align: center;
     height: 1.5em;
     width: 4.4em;
     border: 1px solid #bcbcb7;
     border-radius: 0.3em;
-    color: #00a200;
-    font-size: 1.3em;
+    font-size: 1.5em;
   }
   & span {
-    vertical-align: middle;
-    margin-left: 0.5em;
+    color: #00a200;
+    font-size: 1.9rem;
+    margin-left: 0.3em;
   }
 }

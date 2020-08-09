@@ -1,3 +1,21 @@
-.right__inputs
-    input.body__input.input(type="radio" name="more" value="yes")
-    label Больше 10 кг
+.right__content.right__content_hidden
+    .right__inputs
+        label 
+            input.right__input.input(type="radio" checked name="more")
+            span.input__text Больше 10 кг
+        .right__body
+            p.right__text Мы не отправляем посылки более 10 кг.
+            p.right__text Её можно разбить на части до 10 кг?
+        .right__input
+            label 
+                input.input(type="radio" name="more-2" value="more-yes")
+                span.input__text Да
+        .right__input    
+            label 
+                input.input(type="radio" name="more-2" value="more-no")
+                span.input__text Нет
+.right__content_active
+    .right__inputs
+        label 
+            input.right__input.input(type="radio" name="more")
+            span.input__text.input__text_active Больше 10 кг

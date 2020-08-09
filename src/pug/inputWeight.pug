@@ -2,11 +2,13 @@
     p.inputs__title 1. Какой вес у вашей посылки?
     .inputs__body
         div    
-            input.body__input.input(type="radio" name="weight" value="5")
-            label.body__label До 5 кг
+            label 
+                input.body__input.input(type="radio"  name="weight" value="5")
+                span.input__text До 5 кг
         div
-            input.body__input.input(type="radio" name="weight" value="10")
-            label.body__label От 5 до 10 кг
+            label 
+                input.body__input.input(type="radio" name="weight" value="10")
+                span.input__text От 5 до 10 кг
         .input-pice
-            input(type="number")
+            input.pice_input( type="number" readonly min='1' max='2' value='2')
             span части

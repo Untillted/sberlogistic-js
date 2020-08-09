@@ -2,12 +2,14 @@
     p.inputs__title 3. Хотите застраховать посылку?
     .inputs__body
         div
-            input.body__input.input(type="radio" name="sum" value="yes")
-            label.body__label Да, на сумму
+            label 
+                input.body__input.input(type="radio" name="sum")
+                span.input__text Да, на сумму
         div    
-            input.body__input.input(type="radio" name="sum" value="no")
-            label.body__label Нет
+            label 
+                input.body__input.input(type="radio" name="sum")
+                span.input__text Нет
         .input-sum
-            input(type="number")
-            span
-                img(src="../assets/item.png")
+            input.sum_input(type="number")
+            span ₽
+                
