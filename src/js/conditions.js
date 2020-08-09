@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       changeColorGreen(inputSum);
       changeColorGreen(inputSumText);
-      bodyOutText.innerHTML = "";
+      bodyOutText.textContent = "";
     }
   });
 
@@ -62,7 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
   function resultShow(elem) {
     elem.style.display = "inline-block";
   }
-
   // FOOTER RESULT HIDE ============================
   function resultHide(elem) {
     elem.style.display = "none";
@@ -75,31 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function changeColorGreen(elem) {
     elem.style.color = "#00a200";
   }
-
-  //  CONDITIONS ===================================
-
-  for (let input of inputs) {
-    input.addEventListener("input", () => {
-      let value = input.value;
-      if (value == "10") {
-        inputActive();
-      } else if (value == "more-yes") {
-        inputActive();
-        footerTextHide();
-      } else if (value == "more-no") {
-        footerTextShow();
-        inputHide();
-      } else if (value == "5") {
-        inputHide();
-        footerTextHide();
-      } else if (value == "more-10") {
-        inputHide();
-      }
-    });
-  }
-  //  CONDITIONS ===================================
-
-  // INPUT PICE SHOW ====================
+  // INPUT PICE SHOW ===============================
 
   function inputActive() {
     divPiceActive.classList.add("input-pice_active");
@@ -110,5 +85,32 @@ document.addEventListener("DOMContentLoaded", () => {
     divPiceActive.classList.remove("input-pice_active");
     inputPiceActive.setAttribute("readonly", "readonly");
   }
-  // INPUT PICE ==========================
+  // INPUT PICE =====================================
+
+  //  CONDITIONS ===================================
+
+  for (let input of inputs) {
+    input.addEventListener("input", () => {
+      let value = input.value,
+        name = input.name;
+      if (name == "weight" && value == "10") {
+        inputActive();
+      } else if (name == "more-2" && value == "more-yes") {
+        footerTextHide();
+      } else if (name == "more-2" && value == "more-no") {
+        footerTextShow();
+        inputHide();
+      } else if (name == "weight" && value == "more-10") {
+        inputHide();
+      } else if (name == "weight" && value == "5") {
+        inputHide();
+        footerTextHide();
+      } else if (name == "sum" && value == "0") {
+        bodyOutText.textContent = "";
+        changeColorGreen(inputSum);
+        changeColorGreen(inputSumText);
+      }
+    });
+  }
+  //  CONDITIONS ===================================
 });

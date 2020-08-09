@@ -31,6 +31,7 @@
   // .calculate__footer
 
   &__footer {
+    position: relative;
     height: 5.9em;
     background: #ffffff;
     text-align: right;
@@ -42,6 +43,7 @@
   &:checked + &__text::after {
     opacity: 1;
   }
+  // .input__text
   &__text {
     font-weight: 500;
     position: relative;
@@ -69,10 +71,6 @@
       opacity: 0;
       transition: 0.3s;
     }
-  }
-  // .input__more
-
-  &__more {
   }
 }
 // BODY==================================

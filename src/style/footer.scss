@@ -1,18 +1,23 @@
 .footer {
   &__out {
-    display: block;
+    // .footer__out
+    position: absolute;
+    left: 15%;
+    top: 0%;
     text-align: center;
     color: #ff7f00;
     font-size: 1em;
     font-weight: 600;
-    padding: 0 0;
+    padding: 2em 0 0 0;
   }
+  // .footer__text
   &__text {
     width: 522px;
     display: inline-block;
     font-size: 1.1em;
     margin-right: 0.5em;
   }
+  // .footer__res
   &__res {
     color: #05a405;
     font-size: 3.5em;
