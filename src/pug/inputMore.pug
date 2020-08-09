@@ -1,7 +1,7 @@
 .right__content.right__content_hidden
     .right__inputs
         label 
-            input.right__input.input(type="radio" checked name="more")
+            input.right__input.input(type="radio" checked )
             span.input__text Больше 10 кг
         .right__body
             p.right__text Мы не отправляем посылки более 10 кг.
@@ -17,5 +17,5 @@
 .right__content_active
     .right__inputs
         label 
-            input.right__input.input(type="radio" name="more")
-            span.input__text.input__text_active Больше 10 кг
+            input.right__input.input.right__input_active(type="radio" name='weight' value= "more-10")
+            span.input__text Больше 10 кг

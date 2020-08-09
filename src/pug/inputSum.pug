@@ -3,13 +3,13 @@
     .inputs__body
         div
             label 
-                input.body__input.input(type="radio" name="sum")
+                input.body__input.input(type="radio" name="sum" value='1')
                 span.input__text Да, на сумму
         div    
             label 
-                input.body__input.input(type="radio" name="sum")
+                input.body__input.input(type="radio" name="sum" value='0')
                 span.input__text Нет
         .input-sum
-            input.sum_input(type="number")
-            span ₽
+            input.sum_input(type="number" name="sum")
+            span.sum_text ₽
                 

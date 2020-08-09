@@ -5,7 +5,7 @@
   background: #f9f9f3;
   border: 2px solid green;
   border-radius: 1em;
-  margin: 1em auto;
+  margin: 0.4em auto;
   overflow: hidden;
   cursor: default;
   & label {
@@ -93,7 +93,7 @@
   // .body__out
   &__out {
     flex: 0 0 100%;
-    margin: 0 0 0.75em 2.7em;
+    margin: 0 0 0 2.7em;
     height: 2em;
     & p {
       color: #ff7f00;

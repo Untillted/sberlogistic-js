@@ -1,15 +1,15 @@
 .right {
   flex: 0 0 25%;
-  height: 24em;
+  height: 23em;
   // .right__content
   &__content {
     &_hidden {
       display: none;
-      transition: 1s;
+      // transition: 1s;
     }
     &_active {
       margin: 2.3em 0 0 1em;
-      transform: translate(0.5%, 4.1%);
+      transform: translate(0.5%, 3.7%);
     }
     background: #ffffff;
     border: 1px solid #bcbcb7;

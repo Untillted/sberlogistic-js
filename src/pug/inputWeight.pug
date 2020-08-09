@@ -3,12 +3,12 @@
     .inputs__body
         div    
             label 
-                input.body__input.input(type="radio"  name="weight" value="5")
+                input.body__input.input.body__input_active(type="radio" name="weight" value="5")
                 span.input__text До 5 кг
         div
             label 
                 input.body__input.input(type="radio" name="weight" value="10")
                 span.input__text От 5 до 10 кг
         .input-pice
-            input.pice_input( type="number" readonly min='1' max='2' value='2')
+            input.pice_input( type="number" readonly value = '2')
             span части
