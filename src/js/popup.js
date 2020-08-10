@@ -1,3 +1,8 @@
+// right__content_hidden - строка в этом кусочке кода повторяется 6 раз
+// лучше вынести ее в константу и использовать
+// если понадобиться другой класс - изменить можно в одном месте, а сейчас потребует поиск/замена
+// к тому же код будет короче и легче читаться
+
 document.addEventListener("DOMContentLoaded", () => {
   // VARIABLES ========================
   const inputRight = document.querySelector(".right__input_active"),
