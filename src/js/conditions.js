@@ -1,18 +1,13 @@
-//  "Максимальная объявленная стоимость посылок в Сберлогистике 150 000 ₽"; и
-//  ... посылки с объявленной стоимостью 150 000 ₽ будет стоить всего";
-// допустим макс.сумма изменилась - придется ходить по коду, искать строки, заменять.
-// подобные вещи лучше выносить в константы и использовать везде. 
-// Тут макс.сумму обявив один раз можно использовать и в тексте, и в расчетах.
-
 document.addEventListener("DOMContentLoaded", () => {
   // INPUT VARIABLES ========================
 
-  const inputs = document.querySelectorAll(".input"),
-    divPiceActive = document.querySelector(".input-pice"),
-    inputPiceActive = document.querySelector(".pice_input"),
-    inputSum = document.querySelector(".sum_input"),
-    inputSumText = document.querySelector(".sum_text"),
-    inputSumActive = document.querySelector(".input__sum_active");
+  const inputs = document.querySelectorAll(".input");
+  const inputWeightActive = document.querySelectorAll(".weight__input_active");
+  const divPiceActive = document.querySelector(".input-pice");
+  const inputPiceActive = document.querySelector(".pice_input");
+  const inputSum = document.querySelector(".sum_input");
+  const inputSumText = document.querySelector(".sum_text");
+  const inputSumActive = document.querySelector(".input__sum_active");
 
   //  OUT VARIABLES ==========================
 
@@ -22,6 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
     outFooterResult = document.querySelector(".footer__res ");
 
   //  OUT BODY TEXT WARNING ======================
+
+  let maxSum = "150 000";
 
   inputPiceActive.addEventListener("input", () => {
     if (inputPiceActive.value > 2) {
@@ -42,10 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (inputSum.value > 150000) {
       changeColorOrange(inputSum);
       changeColorOrange(inputSumText);
-      bodyOutText.textContent =
-        "Максимальная объявленная стоимость посылок в Сберлогистике 150 000 ₽";
-      outFooterText.textContent =
-        "Отправка застрахованной посылки с объявленной стоимостью 150 000 ₽ будет стоить всего";
+      bodyOutText.textContent = `Максимальная объявленная стоимость посылок в Сберлогистике ${maxSum} ₽`;
+      outFooterText.textContent = `Отправка застрахованной посылки с объявленной стоимостью ${maxSum} ₽ будет стоить всего`;
     } else {
       changeColorGreen(inputSum);
       changeColorGreen(inputSumText);
@@ -88,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
     inputPiceActive.removeAttribute("readonly");
   }
   function inputHide() {
-    inputPiceActive.value = "";
+    inputPiceActive.value = 2;
     divPiceActive.classList.remove("input-pice_active");
     inputPiceActive.setAttribute("readonly", "readonly");
   }
@@ -101,37 +96,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   for (let input of inputs) {
     input.addEventListener("input", () => {
-      // споров про такое объявление переменных много
-      // считаю что лучше использовать точку с запятой
-      // т.е. 
-      // let value = input.value;
-      // let name = input.name;
-      // такой код проще читать, в некоторых случаях поможет избежать ошибок
-      // при этом объявление через запятую не дает никаких выгод
-      let value = input.value,
-        name = input.name;
-        
-      if (name == "weight" && value == "10") {
-        inputActive();
-      } else if (name == "more-2" && value == "more-yes") {
-        // если посылка разбивается на части
-        // должен включится выбор От 5 до 10 кг + укзано кол-во частей. Этого не происходит.
-        // сценарий
-        // 1. выбор больше 10кг
-        // 2. разбить на части - Да
-        // Результат - отправка стоит 0 рублей
-        // 3. меняю выбор на От 5 до 10 кг
-        // Результат - одновременно выбрано выбрано больше 10 кг и От 5 до 10 кг,
-        // стоимость отправки по прежнему 0 руб.
+      let value = input.value;
+      let name = input.name;
+
+      if (name == "weight" && value == "5") {
+        inputHide();
         footerTextHide();
+      }
+      if (name == "weight" && value == "10") {
+        // inputActive();
+      } else if (name == "more-2" && value == "more-yes") {
+        inputActive();
+        footerTextHide();
+        inputWeightActive[1].checked = "true";
       } else if (name == "more-2" && value == "more-no") {
         footerTextShow();
         inputHide();
       } else if (name == "weight" && value == "more-10") {
         inputHide();
-      } else if (name == "weight" && value == "5") {
-        inputHide();
-        footerTextHide();
       } else if (name == "sum" && value == "0") {
         bodyOutText.textContent = "";
         changeColorGreen(inputSum);
@@ -139,5 +121,4 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-  //  CONDITIONS ===================================
 });

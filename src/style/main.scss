@@ -1,12 +1,7 @@
-
-// когда почти везде размеры устанавливаются в em, т.е. зависят от кегля шрифта
-// лучше не полагаться на браузер и задать для html базовый размер в px
-// так получим предсказуемое поведения использую rem и em
-
 // MAIN STYLE==============================
 .wrapper {
-  width: 55em;
-  height: 42em;
+  width: 880px;
+  height: 732px;
   background: #f9f9f3;
   border: 2px solid green;
   border-radius: 1em;
@@ -27,14 +22,6 @@
   &__header {
     padding-top: 2em;
   }
-
-  // .calculate__body
-
-  // такая строка приведет к появлению пустого (без правил) селектора в файле стилей
-  // лучше не оставлять
-  &__body {
-  }
-
   // .calculate__footer
 
   &__footer {
@@ -76,10 +63,7 @@
       left: 0;
       transform: translate(30%, -45%);
       opacity: 0;
-      // лучше всегда указывать свойство для которого применяется transition
-      // предсказуемая анимация - только то что нужно и меньше нагрузка на браузер 
-      // ведь рассчитываются не все свойства, а только указанные
-      transition: 0.3s;
+      transition: opacity 0.3s ease-in;
     }
   }
 }
@@ -90,9 +74,6 @@
     display: flex;
     flex-wrap: wrap;
     text-align: left;
-  }
-  // .body__col
-  &__col {
   }
   // .body__input
   &__input {

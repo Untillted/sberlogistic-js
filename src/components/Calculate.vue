@@ -1,3 +1,4 @@
+
 <template lang="pug">
 // Формально это vue-компонент. Но только формально.
 // Здесь не используется vue, только для формирования DOM - и дальше js коде который с ним работает.
@@ -13,6 +14,11 @@
     include ../pug/footer.pug
 </template>
 
+<script>
+export default {
+  name: "Calculator",
+};
+</script>
 <style lang="scss">
 // RESET ===================================
 @import "@/style/reset.scss";

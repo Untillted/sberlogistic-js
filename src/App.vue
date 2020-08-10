@@ -14,6 +14,7 @@ export default {
   components: {
     Calculate,
   },
+  methods: {},
 };
 </script>
 
