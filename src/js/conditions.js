@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
     divPiceActive = document.querySelector(".input-pice"),
     inputPiceActive = document.querySelector(".pice_input"),
     inputSum = document.querySelector(".sum_input"),
-    inputSumText = document.querySelector(".sum_text");
+    inputSumText = document.querySelector(".sum_text"),
+    inputSumActive = document.querySelector(".input__sum_active");
 
   //  OUT VARIABLES ==========================
 
@@ -85,7 +86,10 @@ document.addEventListener("DOMContentLoaded", () => {
     divPiceActive.classList.remove("input-pice_active");
     inputPiceActive.setAttribute("readonly", "readonly");
   }
-  // INPUT PICE =====================================
+  // INPUT SUM ACTIVE ==============================
+  inputSum.addEventListener("click", () => {
+    inputSumActive.checked = "true";
+  });
 
   //  CONDITIONS ===================================
 

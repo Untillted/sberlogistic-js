@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
     courier = document.querySelector(".courier__input_active");
   // OUT OF INPUT ================================
   const outFooterText = document.querySelector(".footer__text"),
-    outFooterResult = document.querySelector(".footer__res "),
-    outFooterTextWarning = document.querySelector(".footer__out");
+    outFooterResult = document.querySelector(".footer__res ");
+  // outFooterTextWarning = document.querySelector(".footer__out");
   //  CONDITIONS ===================================
   let weightValue = 0,
     courierValue = 0,
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let result;
     result = courier + weight * 2.5 + (insurance / 100) * 0.2;
     const resultAround = Math.round(result);
-    if (outFooterTextWarning.textContent == "" && resultAround >= 0) {
+    if (resultAround >= 0) {
       outFooterResult.textContent = `${resultAround} ₽`;
       outFooterText.textContent = "Отправка будет стоить всего";
     }
